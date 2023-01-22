@@ -24,3 +24,13 @@ outbounds:
   tag: direct
   settings:
     domainStrategy: UseIPv4
+
+- protocol: dns
+  tag: dns-out
+
+routing:
+  rules:
+  - type: field
+    outboundTag: dns-out
+    network: udp
+    port: 53
